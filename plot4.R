@@ -10,20 +10,20 @@ Thu <- data2$date_time[1]
 Fri <- data2$date_time[length(data2$date_time)/2]
 Sat <- data2$date_time[length(data2$date_time)]
 
-png(file = "plot4.png")
+png(file = "plot4.png", width = 480, height = 480)
 par(mfrow = c(2,2))
-        with(data, plot(date_time, Global_active_power, type = 'l', xaxt = 'n', xlab = NA, ylab = 'Global Active Power', bg = NA, mfrow = c(2,2)))
+        with(data2, plot(date_time, Global_active_power, type = 'l', xaxt = 'n', xlab = NA, ylab = 'Global Active Power', bg = NA, mfrow = c(2,2)))
         axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat"))
         
-        with(data, plot(date_time, Voltage, type = 'l', xaxt = 'n', xlab = 'datetime', ylab = 'Voltage', bg = NA))
+        with(data2, plot(date_time, Voltage, type = 'l', xaxt = 'n', xlab = 'datetime', ylab = 'Voltage', bg = NA))
         axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat"))
         
-        with(data, plot(date_time, Sub_metering_1, type = 'l', col = 'gray', xaxt = 'n', xlab = NA, ylab = 'Energy sub metering', bg = NA))
-        lines(data$date_time, data$Sub_metering_2, col = 'red')
-        lines(data$date_time, data$Sub_metering_3, col = 'blue')
+        with(data2, plot(date_time, Sub_metering_1, type = 'l', xaxt = 'n', xlab = NA, ylab = 'Energy sub metering', bg = NA))
+        lines(data2$date_time, data2$Sub_metering_2, col = 'red')
+        lines(data2$date_time, data2$Sub_metering_3, col = 'blue')
         axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat"))
-        legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 0.8, pt.cex = 1, lty = 1, col = c("gray", "red", "blue"), bty = 'n')
+        legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 0.9, lty = 1, col = c("black", "red", "blue"), bty = 'n')
         
-        with(data, plot(date_time, Global_reactive_power, type = 'l', xaxt = 'n', xlab = 'datetime', ylab = 'Global_reactive_power', bg = NA))
+        with(data2, plot(date_time, Global_reactive_power, type = 'l', xaxt = 'n', xlab = 'datetime', ylab = 'Global_reactive_power', bg = NA))
         axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat"))
 dev.off()
