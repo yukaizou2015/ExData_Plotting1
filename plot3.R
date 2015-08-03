@@ -10,10 +10,10 @@ Thu <- data2$date_time[1]
 Fri <- data2$date_time[length(data2$date_time)/2]
 Sat <- data2$date_time[length(data2$date_time)]
 
-png(file = "plot3.png")
+png(file = "plot3.png", width = 480, height = 480)
 with(data2, plot(date_time, Sub_metering_1, type = 'l', xaxt = 'n', xlab = NA, ylab = 'Energy sub metering', bg = NA))
 lines(data2$date_time, data2$Sub_metering_2, col = 'red')
 lines(data2$date_time, data2$Sub_metering_3, col = 'blue')
 axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat"))
-legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex = 0.7, pt.cex = 1, lty = 1, col = c("black", "red", "blue"))
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = 1, col = c("black", "red", "blue"))
 dev.off()
