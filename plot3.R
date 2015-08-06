@@ -14,7 +14,7 @@ data2 <- data.frame(data, date_time) # Make a data frame for data and date_time 
         Sat <- data2$date_time[length(data2$date_time)] # Assign the last value of the date_time to variable Sat
 
 png(file = "plot3.png", width = 480, height = 480) # Initialize graphic device for png, set output filename, width, and height
-        par(bg = NA)
+        par(bg = NA) # Make the background transparent
         with(data2, plot(date_time, Sub_metering_1, type = 'l', xaxt = 'n',
                          xlab = NA, ylab = 'Energy sub metering')) # Make the first line plot
         lines(data2$date_time, data2$Sub_metering_2, col = 'red') # Add the second line plot
