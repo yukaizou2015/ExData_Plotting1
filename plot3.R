@@ -17,9 +17,9 @@ png(file = "plot3.png", width = 480, height = 480) # Initialize graphic device f
         par(bg = NA) # Make the background transparent
         with(data2, plot(date_time, Sub_metering_1, type = 'l', xaxt = 'n',
                          xlab = NA, ylab = 'Energy sub metering')) # Make the first line plot
+        axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat")) # Rename the x axis
         lines(data2$date_time, data2$Sub_metering_2, col = 'red') # Add the second line plot
         lines(data2$date_time, data2$Sub_metering_3, col = 'blue') # Add the third line plot
-        axis(1, at = c(Thu, Fri, Sat), labels = c("Thu", "Fri", "Sat")) # Rename the x axis
         legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
                lty = 1, col = c("black", "red", "blue")) # Make a legend at the topright corner
 dev.off() # Turn off the graphic device
