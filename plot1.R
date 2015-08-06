@@ -8,5 +8,6 @@ setwd("C:/Users/vhasfczouy/Desktop/Coursera/ExData_Plotting1")
 
 x <- data$Global_active_power # Extract global active power out and assign to a variable x
 png("plot1.png", width = 480, height = 480) # Initialize graphic device for png, set output filename, width, and height
+        par(bg = NA)
         hist(x, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red") # Plot the histogram
 dev.off() # Turn off the graphic device
